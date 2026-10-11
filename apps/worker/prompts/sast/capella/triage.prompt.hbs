@@ -1,0 +1,13 @@
+# Injection Triage Sweep
+
+{{> capella-operating-principles}}
+{{> capella-tools}}
+
+The repository under audit is the current working directory.
+{{LANGUAGE_CONTEXT}}
+{{BOUNDARY_CONTEXT}}
+
+## Assigned files
+{{TARGET_FILES}}
+
+Quickly classify each assigned file as `{"potentially_flawed": true/false, "reason": "..."}` only for SQL/NoSQL injection, command injection, LFI/RFI, path traversal, SSTI, or unsafe deserialization. `true` requires a plausible role as network source, taint propagation step, missing/mismatched defense, or dangerous sink. Mark files relevant only to other vulnerability classes `false`. Return the classifications as structured output.

@@ -1,0 +1,17 @@
+# Injection Architecture Mapper
+
+{{> capella-operating-principles}}
+{{> capella-tools}}
+
+The repository under audit is the current working directory.
+{{LANGUAGE_CONTEXT}}
+{{BOUNDARY_CONTEXT}}
+
+Build the injection-only knowledge base used downstream. Inspect production code and return structured output for:
+- `architecture.md`: network ingress → handler → transformation/validation → injection-sensitive sink flows.
+- `entities/*.md`: only components participating in those flows: routes/controllers, query/data layers, process launchers, filesystem/archive handlers, template engines, and deserializers.
+- `vulnerabilities/*.md`: only SQL/NoSQL injection, OS command injection, LFI/RFI, traversal, SSTI, and unsafe deserialization classes relevant to code actually present.
+- `index.md`: links to those injection-only files.
+- `dependencies.json`: import/call dependencies required to trace injection flows; use `{}` when unavailable.
+
+For each mapped component, record exact source paths, attacker-controlled fields, sink APIs, sink grammar/slot, defenses, and network reachability. Do not add entities, assets, or bug classes unrelated to injection. Validate every claim against source. Return the whole KB through the stage's structured output; do not write files directly.

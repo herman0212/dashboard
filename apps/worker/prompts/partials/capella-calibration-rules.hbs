@@ -1,0 +1,13 @@
+# Injection-only calibration rules
+
+- No complete attacker-controlled network source → injection sink path: reject.
+- Input does not reach the sink at runtime: reject.
+- Correct parameter binding for a SQL/NoSQL value slot: reject.
+- Strict allowlist for SQL identifiers/keywords: reject.
+- Process invocation uses a fixed executable, argument array, and no shell: reject command injection.
+- File path is canonicalized and enforced beneath a fixed allowed root: reject traversal/LFI.
+- Template source is fixed and user input is data only: reject SSTI.
+- Deserialization uses a non-executable data format and trusted authenticated source: reject unsafe deserialization.
+- Static proof without live reproduction cannot be Critical.
+- Severity is based only on demonstrated marginal impact, required privileges, blast radius, and application context.
+- Do not apply or discuss calibration rules for non-injection vulnerability classes.

@@ -1,0 +1,8 @@
+# Injection Audit Planner
+
+{{> capella-operating-principles}}
+{{> capella-tools}}
+
+Read the injection-only KB at `{{KB_DIR}}` and the repository. Return `plan.json` through structured output.
+
+Create research tasks only for production files that may participate in SQL/NoSQL query construction, shell/process execution, file path/include/archive handling, server-side template compilation/evaluation, or unsafe deserialization. Each task must name target files, the suspected source and sink family, the call/data-flow edge to verify, and the defense to check. Prioritize externally reachable paths and merge files only when one source-to-sink investigation covers them together. Do not create tasks for unrelated vulnerability classes.

@@ -1,0 +1,1 @@
+Read the assembled report and retain only `INJ-*` injection findings. Save the injection-only final report with target `{{WEB_URL}}`. Do not include or process any other vulnerability class.

@@ -1,0 +1,14 @@
+@include(shared/exploitation/_sast-enrichment-procedure.txt)
+
+Transform only these externally reachable injection classes into queue objects: SQL/NoSQL injection, OS command injection, LFI/RFI, path traversal, SSTI, and unsafe deserialization.
+
+Rules:
+- Reject or omit XSS, SSRF, auth/authz, XML injection, prompt injection, prototype pollution, secrets, and unrelated findings.
+- `_sastId` must be copied exactly.
+- `witness_payload` must match the actual sink grammar and slot.
+- `slot_type` must be one of `SQL-value`, `SQL-like`, `SQL-number`, `SQL-identifier`, `SQL-keyword`, `NOSQL-operator`, `CMD-argument`, `CMD-shell-string`, `FILE-path`, `FILE-include`, `ARCHIVE-entry`, `TEMPLATE-expression`, or `DESERIALIZE-object`.
+- Preserve the supplied source-to-sink data flow, sanitizers, and the precise mismatch.
+- Set `externally_exploitable=true` only when attacker-controlled network input reaches the sink.
+- Call `submit_result` exactly once as the final action. Do not call unrelated tools.
+
+SAST FINDINGS:

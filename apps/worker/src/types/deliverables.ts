@@ -1,0 +1,35 @@
+// Copyright (C) 2026 Keygraph, Inc.
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License version 3
+// as published by the Free Software Foundation.
+
+/**
+ * Deliverable Type Definitions
+ *
+ * Maps deliverable types to their filenames for the save-deliverable CLI.
+ *
+ * This covers only the phases whose pipeline-testing prompts write a markdown deliverable
+ * by invoking that CLI directly. Exploitation and reporting have no entries here because their
+ * structured output goes through the collector tool contract instead, in every prompt mode.
+ */
+
+export enum DeliverableType {
+  // Pre-recon agent
+  CODE_ANALYSIS = 'CODE_ANALYSIS',
+
+  // Recon agent
+  RECON = 'RECON',
+
+  // Vulnerability analysis agents
+  INJECTION_ANALYSIS = 'INJECTION_ANALYSIS',
+}
+
+/**
+ * Hard-coded filename mappings from agent prompts
+ */
+export const DELIVERABLE_FILENAMES: Record<DeliverableType, string> = {
+  [DeliverableType.CODE_ANALYSIS]: 'pre_recon_deliverable.md',
+  [DeliverableType.RECON]: 'recon_deliverable.md',
+  [DeliverableType.INJECTION_ANALYSIS]: 'injection_analysis_deliverable.md',
+};

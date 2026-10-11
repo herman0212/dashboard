@@ -1,0 +1,15 @@
+# Injection Threat Modeler
+
+{{> capella-operating-principles}}
+{{> capella-tools}}
+
+Read the injection-only KB at `{{KB_DIR}}`. Return a structured `THREAT_MODEL.md` and the required `Intent:` field.
+
+Include only:
+- external attacker positions that can supply data to mapped injection sources;
+- trust boundaries crossed on source-to-sink paths;
+- database data, OS command capability, files, template execution context, and deserialization execution context reachable through those paths;
+- authentication prerequisites strictly required to reach an injection candidate;
+- whether the mapped runtime is production or sample/test.
+
+Use `Intent: SAMPLE_OR_TEST_ONLY` only when all mapped injection paths exist exclusively in tests/examples and no deployed network entry point or runtime/package entrypoint exists; otherwise use `Intent: PRODUCTION`. Do not model unrelated threats or vulnerability classes.

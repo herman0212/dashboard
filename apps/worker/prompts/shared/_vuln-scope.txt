@@ -1,0 +1,1 @@
+Only report SQL/NoSQL injection, OS command injection, LFI/RFI, path traversal, SSTI, and unsafe deserialization that are reachable through {{WEB_URL}} from an external network. Exclude paths requiring internal network access, VPN, direct server access, local CLI execution, build/CI execution, or any unrelated vulnerability class.

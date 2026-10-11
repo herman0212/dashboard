@@ -1,0 +1,1 @@
+Run only the injection pre-recon smoke test: save a `CODE_ANALYSIS` deliverable whose content states `Injection pre-recon pipeline test complete`. Do not call unrelated tools. Then stop.

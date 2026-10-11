@@ -1,0 +1,67 @@
+{
+  "name": "@keygraph/astra",
+  "version": "0.0.0",
+  "description": "Astra is an autonomous white-box AI pentester for web applications and APIs, by Keygraph.",
+  "type": "module",
+  "main": "dist/index.mjs",
+  "bin": {
+    "astra": "dist/index.mjs"
+  },
+  "files": [
+    "dist",
+    "infra"
+  ],
+  "scripts": {
+    "build": "tsdown && tsdown --config tsdown.dashboard.config.ts",
+    "check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.1.0",
+    "@temporalio/client": "1.15.0",
+    "chalk": "^4.1.2",
+    "chokidar": "^5.0.0",
+    "dotenv": "^17.3.1",
+    "smol-toml": "^1.6.1"
+  },
+  "keywords": [
+    "security",
+    "pentest",
+    "penetration-testing",
+    "vulnerability-assessment",
+    "ai",
+    "white-box",
+    "owasp",
+    "exploitation",
+    "appsec",
+    "keygraph"
+  ],
+  "author": "Keygraph, Inc.",
+  "license": "AGPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/KeygraphHQ/astra/issues"
+  },
+  "homepage": "https://github.com/KeygraphHQ/astra#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeygraphHQ/astra.git",
+    "directory": "apps/cli"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "tsdown": "^0.21.5"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./dashboard-runtime": {
+      "types": "./dist/dashboard-runtime.d.mts",
+      "import": "./dist/dashboard-runtime.mjs"
+    },
+    "./dashboard-read": {
+      "types": "./dist/dashboard-read.d.mts",
+      "import": "./dist/dashboard-read.mjs"
+    }
+  }
+}

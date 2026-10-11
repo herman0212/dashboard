@@ -1,0 +1,1 @@
+Run only the injection analysis smoke test. Save an `INJECTION_ANALYSIS` deliverable stating that no injection vulnerabilities were identified, then return an empty injection exploitation queue. Do not navigate to external sites, take screenshots, or call unrelated tools.

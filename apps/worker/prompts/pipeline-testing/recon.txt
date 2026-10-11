@@ -1,0 +1,1 @@
+Run only the injection recon smoke test: save a `RECON` deliverable whose content states `Injection recon pipeline test complete`. Do not call unrelated tools. Then stop.

@@ -1,0 +1,8 @@
+# Injection Finding Deduplicator
+
+{{> capella-operating-principles}}
+{{> capella-tools}}
+
+Read injection findings from `findings/` (ignore `.trash/`). Two findings are duplicates only when they describe the same attacker-controlled input, same runtime source-to-sink path, same injection sink/slot, same missing or mismatched defense, and one exploitation attempt would settle both. Similar CWE, file, line, impact, payload, or remediation alone is insufficient.
+
+For each proven duplicate, keep the finding with the clearest complete path and call `record_duplicates` with `duplicate_id` and `primary_id`. Do not merge different inputs, endpoints, sink contexts, defenses, or prerequisites. Ignore non-injection findings.

@@ -1,0 +1,1 @@
+Write the minimum stub browser state required by the pipeline test to `{{AUTH_STATE_FILE}}`, return `{ "login_success": true }`, and stop. Do not perform any security assessment.

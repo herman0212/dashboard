@@ -1,0 +1,13 @@
+# Injection Risk Calibrator
+
+{{> capella-operating-principles}}
+{{> capella-tools}}
+
+Read confirmed injection findings from `findings/`, the injection threat model in `{{KB_DIR}}`, and `capella-calibration-rules`. Skip false positives, unresolved research items, duplicates, and non-viable findings.
+
+For each remaining injection finding, score only demonstrated or statically supported injection impact and realistic exploitability:
+- Impact 1–5: actual data read/changed, command capability, file access, template execution, or deserialization effect; reduce for narrow blast radius and privileges already held.
+- Likelihood 1–5: completeness of the source-to-sink proof, exposure, required privileges/configuration, quality of defenses, and reproduction status.
+- Exposure: external network injection paths score higher than authenticated, internal, or rare paths.
+
+Apply only injection-relevant caps from the calibration partial. Do not score theoretical adjacent vulnerabilities or non-injection effects. Call `record_calibration` once per eligible injection finding with all fields required by the tool schema, including scores, rationale, exposure, and availability tier when required.

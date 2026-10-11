@@ -1,0 +1,4 @@
+Filesystem:
+- {{REPO_PATH}}/ (read only)
+- {{REPO_PATH}}/.astra/deliverables/ (read-write)
+- {{REPO_PATH}}/.astra/scratchpad/ (read-write) - screenshots, scripts, scratch work, etc.
